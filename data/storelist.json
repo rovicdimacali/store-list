@@ -49,14 +49,6 @@
       "owner": "Michael Brown"
     },
     {
-      "id": 8,
-      "name": "Company H",
-      "address": "555 Oak Avenue",
-      "email": "info@companyh.com",
-      "contact_number": "555-789-1234",
-      "owner": "Lisa Davis"
-    },
-    {
       "id": 9,
       "name": "Company I",
       "address": "666 Elm Road",
@@ -113,28 +105,12 @@
       "owner": "Paul Turner"
     },
     {
-      "id": 16,
-      "name": "Company P",
-      "address": "444 Pine Road",
-      "email": "info@companyp.com",
-      "contact_number": "555-890-1234",
-      "owner": "Jessica King"
-    },
-    {
-      "id": 17,
-      "name": "Company Q",
-      "address": "555 Cedar Street",
-      "email": "info@companyq.com",
-      "contact_number": "555-234-5678",
-      "owner": "Michael Adams"
-    },
-    {
-      "id": 18,
-      "name": "Company R",
-      "address": "666 Willow Avenue",
-      "email": "info@companyr.com",
-      "contact_number": "555-567-8901",
-      "owner": "Susan Green"
+      "id": "23591017-1529-4cb3-9c8c-7a40328e96eb",
+      "name": "Company Z",
+      "address": "6 Policy",
+      "email": "kurt@xyz.com",
+      "contact_number": "123124124",
+      "owner": "Kurt P."
     }
   ]
 }

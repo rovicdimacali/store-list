@@ -8,10 +8,10 @@
     class="overlay"
   >
     <div class="form-container">
-      <form @submit.prevent="addNewStore">
+      <form @submit.prevent="updateCurrentStore">
         <label for="store-name">Store Name</label>
         <input
-          v-model="newStore.name"
+          v-model="updatedStore.name"
           type="text"
           id="store-name"
           name="store-name"
@@ -20,7 +20,7 @@
         />
         <label for="store-address">Store Address</label>
         <input
-          v-model="newStore.address"
+          v-model="updatedStore.address"
           type="text"
           id="store-address"
           name="store-address"
@@ -29,7 +29,7 @@
         />
         <label for="store-address">Store Email</label>
         <input
-          v-model="newStore.email"
+          v-model="updatedStore.email"
           type="email"
           id="store-email"
           name="store-email"
@@ -38,7 +38,7 @@
         />
         <label for="store-contact">Store Contact Number</label>
         <input
-          v-model="newStore.contact_number"
+          v-model="updatedStore.contact_number"
           type="text"
           id="store-contact"
           name="store-contact"
@@ -47,7 +47,7 @@
         />
         <label for="store-owner">Store Owner</label>
         <input
-          v-model="newStore.owner"
+          v-model="updatedStore.owner"
           type="text"
           id="store-owner"
           name="store-owner"
@@ -55,58 +55,40 @@
           required
         />
 
-        <button type="submit">Add Store</button>
+        <button type="submit">Update Store</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import { addStore } from "../composables/mockstore";
-import { v4 as uuidv4 } from "uuid";
+import { updateStore } from "../composables/mockstore";
 export default {
+  props: [
+    "storeIdToUpdate",
+    "storeNameToUpdate",
+    "storeAddressToUpdate",
+    "storeEmailToUpdate",
+    "storeContactNumberToUpdate",
+    "storeOwnerToUpdate",
+  ],
   data() {
     return {
-      newStore: {
-        id: uuidv4(),
-        name: "",
-        address: "",
-        email: "",
-        contact_number: "",
-        owner: "",
+      updatedStore: {
+        name: this.storeNameToUpdate,
+        address: this.storeAddressToUpdate,
+        email: this.storeEmailToUpdate,
+        contact_number: this.storeContactNumberToUpdate,
+        owner: this.storeOwnerToUpdate,
       },
     };
   },
-  mounted() {
-    this.restoreFormState();
-    console.log("modal mounted");
-  },
-  unmounted() {
-    this.saveFormState();
-    console.log("modal unmounted");
-  },
   methods: {
-    async addNewStore() {
-      const newStore = await addStore(this.newStore);
-      this.$emit("store-added", newStore);
-      this.resetinput();
-    },
-    restoreFormState() {
-      const savedFormState = JSON.parse(localStorage.getItem("newStore"));
-      if (savedFormState) {
-        this.newStore = savedFormState;
-      }
-    },
-    saveFormState() {
-      localStorage.setItem("newStore", JSON.stringify(this.newStore));
-    },
-    resetinput() {
-      this.newStore.id = uuidv4();
-      this.newStore.name = "";
-      this.newStore.address = "";
-      this.newStore.email = "";
-      this.newStore.contact_number = "";
-      this.newStore.owner = "";
+    async updateCurrentStore() {
+      const updateStore = await updateStore(
+        this.storeIdToUpdate,
+        this.updatedStore
+      );
     },
   },
 };
