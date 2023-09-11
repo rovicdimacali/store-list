@@ -1,0 +1,164 @@
+{
+  "store": [
+    {
+      "id": 1,
+      "name": "Company A",
+      "address": "123 Main Street",
+      "email": "info@companya.com",
+      "contact_number": "555-123-4567",
+      "owner": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Company B",
+      "address": "456 Elm Street",
+      "email": "info@companyb.com",
+      "contact_number": "555-987-6543",
+      "owner": "Jane Smith"
+    },
+    {
+      "id": 3,
+      "name": "Company C",
+      "address": "789 Oak Street",
+      "email": "info@companyc.com",
+      "contact_number": "555-789-0123",
+      "owner": "Mike Johnson"
+    },
+    {
+      "id": 4,
+      "name": "Company D",
+      "address": "101 Pine Avenue",
+      "email": "info@companyd.com",
+      "contact_number": "555-345-6789",
+      "owner": "Sarah Williams"
+    },
+    {
+      "id": 5,
+      "name": "Company E",
+      "address": "222 Birch Lane",
+      "email": "info@companye.com",
+      "contact_number": "555-567-8901",
+      "owner": "David Lee"
+    },
+    {
+      "id": 6,
+      "name": "Company F",
+      "address": "333 Cedar Road",
+      "email": "info@companyf.com",
+      "contact_number": "555-234-5678",
+      "owner": "Karen White"
+    },
+    {
+      "id": 7,
+      "name": "Company G",
+      "address": "444 Willow Drive",
+      "email": "info@companyg.com",
+      "contact_number": "555-678-9012",
+      "owner": "Michael Brown"
+    },
+    {
+      "id": 8,
+      "name": "Company H",
+      "address": "555 Oak Avenue",
+      "email": "info@companyh.com",
+      "contact_number": "555-789-1234",
+      "owner": "Lisa Davis"
+    },
+    {
+      "id": 9,
+      "name": "Company I",
+      "address": "666 Elm Road",
+      "email": "info@companyi.com",
+      "contact_number": "555-890-2345",
+      "owner": "Robert Wilson"
+    },
+    {
+      "id": 10,
+      "name": "Company J",
+      "address": "777 Pine Lane",
+      "email": "info@companyj.com",
+      "contact_number": "555-456-7890",
+      "owner": "Susan Moore"
+    },
+    {
+      "id": 11,
+      "name": "Company K",
+      "address": "888 Birch Drive",
+      "email": "info@companyk.com",
+      "contact_number": "555-123-5678",
+      "owner": "James Taylor"
+    },
+    {
+      "id": 12,
+      "name": "Company L",
+      "address": "999 Cedar Avenue",
+      "email": "info@companyl.com",
+      "contact_number": "555-234-9012",
+      "owner": "Jennifer Clark"
+    },
+    {
+      "id": 13,
+      "name": "Company M",
+      "address": "111 Willow Street",
+      "email": "info@companym.com",
+      "contact_number": "555-567-2345",
+      "owner": "Daniel Harris"
+    },
+    {
+      "id": 14,
+      "name": "Company N",
+      "address": "222 Oak Lane",
+      "email": "info@companyn.com",
+      "contact_number": "555-678-8901",
+      "owner": "Karen Lewis"
+    },
+    {
+      "id": 15,
+      "name": "Company O",
+      "address": "333 Elm Drive",
+      "email": "info@companyo.com",
+      "contact_number": "555-789-4567",
+      "owner": "Paul Turner"
+    },
+    {
+      "id": 16,
+      "name": "Company P",
+      "address": "444 Pine Road",
+      "email": "info@companyp.com",
+      "contact_number": "555-890-1234",
+      "owner": "Jessica King"
+    },
+    {
+      "id": 17,
+      "name": "Company Q",
+      "address": "555 Cedar Street",
+      "email": "info@companyq.com",
+      "contact_number": "555-234-5678",
+      "owner": "Michael Adams"
+    },
+    {
+      "id": 18,
+      "name": "Company R",
+      "address": "666 Willow Avenue",
+      "email": "info@companyr.com",
+      "contact_number": "555-567-8901",
+      "owner": "Susan Green"
+    },
+    {
+      "id": 19,
+      "name": "Company S",
+      "address": "777 Oak Lane",
+      "email": "info@companys.com",
+      "contact_number": "555-678-2345",
+      "owner": "William Parker"
+    },
+    {
+      "id": 20,
+      "name": "Company T",
+      "address": "888 Elm Road",
+      "email": "info@companyt.com",
+      "contact_number": "555-789-5678",
+      "owner": "Nancy Turner"
+    }
+  ]
+}
