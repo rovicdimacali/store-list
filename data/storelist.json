@@ -1,14 +1,6 @@
 {
   "store": [
     {
-      "id": 1,
-      "name": "Company A",
-      "address": "123 Main Street",
-      "email": "info@companya.com",
-      "contact_number": "555-123-4567",
-      "owner": "John Doe"
-    },
-    {
       "id": 2,
       "name": "Company B",
       "address": "456 Elm Street",
@@ -143,22 +135,6 @@
       "email": "info@companyr.com",
       "contact_number": "555-567-8901",
       "owner": "Susan Green"
-    },
-    {
-      "id": 19,
-      "name": "Company S",
-      "address": "777 Oak Lane",
-      "email": "info@companys.com",
-      "contact_number": "555-678-2345",
-      "owner": "William Parker"
-    },
-    {
-      "id": 20,
-      "name": "Company T",
-      "address": "888 Elm Road",
-      "email": "info@companyt.com",
-      "contact_number": "555-789-5678",
-      "owner": "Nancy Turner"
     }
   ]
 }

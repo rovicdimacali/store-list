@@ -10,4 +10,15 @@ async function loadAndParseStoreJSON() {
   }
 }
 
-export { loadAndParseStoreJSON };
+async function deleteStore(itemID) {
+  try {
+    const response = await axios.delete(
+      `http://localhost:3000/store/${itemID}`
+    );
+    return itemID;
+  } catch {
+    console.log("Error deleting JSON Data", error);
+  }
+}
+
+export { loadAndParseStoreJSON, deleteStore };
