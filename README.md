@@ -16,14 +16,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run at your local and start JSON-Server using Concurrently
 
 ```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+npm run start
 ```
