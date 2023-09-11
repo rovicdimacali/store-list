@@ -1,10 +1,365 @@
-@import "./base.css";
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+  --vt-c-indigo: #2c3e50;
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--vt-c-white);
+  --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute);
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+  }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  background: rgb(117, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+nav h1 {
+  color: white;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pacifico", sans-serif;
+}
+
+.table-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-container table {
+  width: 1200px;
+  margin-top: 50px;
+  border: 1px solid rgb(117, 0, 0);
+  padding: 20px;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.table-container table .table-header {
+  background: rgb(117, 0, 0);
+  color: white;
+}
+.table-container table .table-header th {
+  padding: 20px;
+  font-family: "Popins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+.table-container table tbody th {
+  padding: 20px;
+  font-family: "Popins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+.table-container table tbody .shaded {
+  background: rgba(117, 0, 0, 0.062);
+}
+.table-container table tbody .shaded button {
+  background: rgb(117, 0, 0);
+  margin: 5px;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid rgb(117, 0, 0);
+  transition: 0.3s all;
+  font-family: "Poppins";
+  font-weight: 700;
+}
+.table-container table tbody .shaded button:hover {
+  background: none;
+  color: rgb(117, 0, 0);
+}
+
+.notification {
+  position: fixed;
+  top: -70px;
+  width: 300px;
+  padding: 20px;
+  background: rgb(34, 131, 34);
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.active {
+  top: 110px;
+  transition: all 0.3s;
+}
+
+.notification .notification-text {
+  color: white;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.overlay.add-store {
+  top: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.overlay.add-store .form-container {
+  width: 800px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+.overlay.add-store .form-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.overlay.add-store .form-container form label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.overlay.add-store .form-container form label:first-child {
+  margin-top: 0;
+}
+.overlay.add-store .form-container form input {
+  padding: 5px 10px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+.overlay.add-store .form-container form button[type=submit] {
+  background-color: rgb(117, 0, 0);
+  color: white;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(117, 0, 0);
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.overlay.add-store .form-container form button[type=submit]:hover {
+  color: rgb(117, 0, 0);
+  background: none;
+}
+.overlay.add-store .form-container form button:disabled {
+  background-color: gray;
+  border: none;
+  color: white;
+  cursor: not-allowed;
+}
+.overlay.add-store .form-container form button:disabled:hover {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
+}
+
+.overlay.update-store {
+  top: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.overlay.update-store .form-container {
+  width: 800px;
+  padding: 20px;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+}
+.overlay.update-store .form-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.overlay.update-store .form-container form label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+.overlay.update-store .form-container form label:first-child {
+  margin-top: 0;
+}
+.overlay.update-store .form-container form input {
+  padding: 5px 10px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+.overlay.update-store .form-container form button[type=submit] {
+  background-color: rgb(117, 0, 0);
+  color: white;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(117, 0, 0);
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.overlay.update-store .form-container form button[type=submit]:hover {
+  color: rgb(117, 0, 0);
+  background: none;
+}
+
+.overlay.delete-store {
+  top: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+.overlay.delete-store .modal {
+  width: 600px;
+  padding: 20px;
+  position: absolute;
+  top: calc(50% - 100px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.overlay.delete-store .modal h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.overlay.delete-store .modal h2 span {
+  font-weight: 700;
+  color: rgb(117, 0, 0);
+}
+.overlay.delete-store .modal button {
+  width: 100px;
+  background: rgb(117, 0, 0);
+  border: 1px solid rgb(117, 0, 0);
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s all;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.overlay.delete-store .modal button:hover {
+  background: none;
+  color: rgb(117, 0, 0);
+}
+.overlay.delete-store .modal .yes-btn {
+  margin-right: 10px;
+}
+.overlay.delete-store .modal .no-btn {
+  margin-left: 10px;
+}
 
 body {
   margin: 0;
   padding: 0;
 }
+
 #app {
   width: 100%;
   height: 100%;
 }
+
+.add-store-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(117, 0, 0);
+  border: 1px solid rgb(117, 0, 0);
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s all;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.add-store-btn:hover {
+  background: none;
+  color: rgb(117, 0, 0);
+}/*# sourceMappingURL=main.css.map */

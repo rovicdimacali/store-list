@@ -1,0 +1,24 @@
+.notification {
+  position: fixed;
+  top: -70px;
+  width: 300px;
+  padding: 20px;
+  background: rgb(34, 131, 34);
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  transition: all 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.active {
+  top: 110px;
+  transition: all 0.3s;
+}
+
+.notification .notification-text {
+  color: white;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}

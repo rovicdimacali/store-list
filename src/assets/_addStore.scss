@@ -1,0 +1,75 @@
+.overlay.add-store {
+  top: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+
+  .form-container {
+    width: 800px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+
+      label {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 3px;
+      }
+
+      label:first-child {
+        margin-top: 0;
+      }
+
+      input {
+        padding: 5px 10px;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        outline: none;
+      }
+
+      button[type="submit"] {
+        background-color: rgb(117, 0, 0);
+        color: white;
+        font-size: 15px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        margin-top: 20px;
+        border-radius: 5px;
+        border: 1px solid rgb(117, 0, 0);
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: 0.3s all;
+      }
+
+      button[type="submit"]:hover {
+        color: rgb(117, 0, 0);
+        background: none;
+      }
+
+      button:disabled {
+        background-color: gray;
+        border: none;
+        color: white;
+        cursor: not-allowed;
+      }
+
+      button:disabled:hover {
+        background-color: gray;
+        color: white;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

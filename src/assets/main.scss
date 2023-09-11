@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap");
+@import "./breakpoints";
+@import "./base";
+@import "./nav";
+@import "./table";
+@import "./notification";
+@import "./addStore";
+@import "./updateStore";
+@import "./deleteStore";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.add-store-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(117, 0, 0);
+  border: 1px solid rgb(117, 0, 0);
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s all;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.add-store-btn:hover {
+  background: none;
+  color: rgb(117, 0, 0);
+}

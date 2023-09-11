@@ -90,19 +90,19 @@
     },
     {
       "id": 14,
-      "name": "Company NA",
+      "name": "Company N",
       "address": "222 Oak Lane",
       "email": "info@companyn.com",
       "contact_number": "555-678-8901",
       "owner": "Karen Lewis"
     },
     {
-      "id": "885092c4-9e53-4175-8c52-dc7aaea442d6",
-      "name": "Store 1",
-      "address": "project 8",
-      "email": "kurt@xyz.com",
-      "contact_number": "151231232",
-      "owner": "Kurt P."
+      "id": "c240584a-ee10-4720-9190-91a849f62b33",
+      "name": "Shopee",
+      "address": "6 Policy",
+      "email": "asd@asd.ca",
+      "contact_number": "12213124213",
+      "owner": "John Doe"
     }
   ]
 }

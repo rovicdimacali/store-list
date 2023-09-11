@@ -5,12 +5,16 @@
         this.$emit('close-popup');
       }
     "
-    class="overlay"
+    class="overlay delete-store"
   >
     <div class="modal">
-      <h2>Are you sure you want to delete {{ storeNameToDelete }}?</h2>
-      <button @click="removeItem(storeIdToDelete)">Yes</button>
+      <h2>
+        Are you sure you want to delete <span>{{ storeNameToDelete }}</span
+        >?
+      </h2>
+      <button class="yes-btn" @click="removeItem(storeIdToDelete)">Yes</button>
       <button
+        class="no-btn"
         @click.self="
           () => {
             this.$emit('close-popup');

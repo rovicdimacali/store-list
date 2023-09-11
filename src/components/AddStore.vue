@@ -5,7 +5,7 @@
         this.$emit('close');
       }
     "
-    class="overlay"
+    class="overlay add-store"
   >
     <div class="form-container">
       <form @submit.prevent="addNewStore">
@@ -34,8 +34,12 @@
           id="store-email"
           name="store-email"
           class="store-email"
+          @input="validateEmail"
           required
         />
+        <span v-if="!emailIsValid" style="color: red"
+          >Email input is invalid.</span
+        >
         <label for="store-contact">Store Contact Number</label>
         <input
           v-model="newStore.contact_number"
@@ -43,8 +47,12 @@
           id="store-contact"
           name="store-contact"
           class="store-contact"
+          @input="validateContactNumber"
           required
         />
+        <span v-if="!contactIsValid" style="color: red"
+          >Contact Number input is invalid.</span
+        >
         <label for="store-owner">Store Owner</label>
         <input
           v-model="newStore.owner"
@@ -52,10 +60,13 @@
           id="store-owner"
           name="store-owner"
           class="store-owner"
+          @input="validateOwner"
           required
         />
-
-        <button type="submit">Add Store</button>
+        <span v-if="!ownerIsValid" style="color: red"
+          >Owner Name input is invalid.</span
+        >
+        <button type="submit" :disabled="!isFormValid">Add Store</button>
       </form>
     </div>
   </div>
@@ -75,6 +86,10 @@ export default {
         contact_number: "",
         owner: "",
       },
+      emailIsValid: true,
+      contactIsValid: true,
+      ownerIsValid: true,
+      isFormValid: false,
     };
   },
   mounted() {
@@ -108,24 +123,33 @@ export default {
       this.newStore.contact_number = "";
       this.newStore.owner = "";
     },
+    validateEmail() {
+      const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      this.emailIsValid = emailRegexp.test(this.newStore.email);
+
+      this.updateFormValidity();
+    },
+    validateContactNumber() {
+      const contactRegExp = /^\d+(?:-\d+)*$/;
+      this.contactIsValid = contactRegExp.test(this.newStore.contact_number);
+
+      this.updateFormValidity();
+    },
+    validateOwner() {
+      const ownerRegExp = /^[A-Za-z\s]+(?:\.[A-Za-z\s]+)?(?:,[A-Za-z\s]+)*$/;
+      this.ownerIsValid = ownerRegExp.test(this.newStore.owner);
+
+      this.updateFormValidity();
+    },
+    updateFormValidity() {
+      if (this.emailIsValid && this.contactIsValid && this.ownerIsValid) {
+        this.isFormValid = true;
+      } else {
+        this.isFormValid = false;
+      }
+    },
   },
 };
 </script>
 
-<style scoped>
-.form-container {
-  width: 400px;
-  padding: 20px;
-  margin: 100px auto;
-  background: white;
-  border-radius: 10px;
-}
-
-.overlay {
-  top: 0;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 100%;
-}
-</style>
+<style scoped></style>

@@ -1,4 +1,5 @@
 <template>
+  <Navbar />
   <div class="container">
     <Notification :class-name="notification" :message="notificationMessage" />
     <AddStore
@@ -24,25 +25,49 @@
       :storeOwnerToUpdate="storeOwnerToUpdate"
       @store-updated="handleStoreUpdated"
     />
-    <div v-for="store in stores" :key="store.id" class="store">
-      <h1>{{ store.name }}</h1>
-      <button @click="toggleDeletePopup(store.id, store.name)">delete</button>
-      <button
-        @click="
-          toggleUpdateStore(
-            store.id,
-            store.name,
-            store.address,
-            store.email,
-            store.contact_number,
-            store.owner
-          )
-        "
-      >
-        update
-      </button>
-      <button @click="toggleNotification">notif</button>
+    <div class="table-container">
+      <table>
+        <thead class="table-header">
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+            <th>Owner</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="store in stores" :key="store.id" class="store">
+            <th>{{ store.name }}</th>
+            <th class="shaded">{{ store.address }}</th>
+            <th>{{ store.email }}</th>
+            <th class="shaded">{{ store.contact_number }}</th>
+            <th>{{ store.owner }}</th>
+            <th class="shaded">
+              <button @click="toggleDeletePopup(store.id, store.name)">
+                Delete
+              </button>
+              <button
+                @click="
+                  toggleUpdateStore(
+                    store.id,
+                    store.name,
+                    store.address,
+                    store.email,
+                    store.contact_number,
+                    store.owner
+                  )
+                "
+              >
+                Update
+              </button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
     <button @click="toggleAddStore" v-if="!showModal" class="add-store-btn">
       Add Store
     </button>
@@ -55,8 +80,9 @@ import AddStore from "./components/AddStore.vue";
 import DeletePopup from "./components/DeletePopup.vue";
 import UpdateStore from "./components/UpdateStore.vue";
 import Notification from "./components/Notification.vue";
+import Navbar from "./components/Navbar.vue";
 export default {
-  components: { AddStore, DeletePopup, UpdateStore, Notification },
+  components: { AddStore, DeletePopup, UpdateStore, Notification, Navbar },
   data() {
     return {
       stores: [],
@@ -133,14 +159,4 @@ export default {
 };
 </script>
 
-<style>
-.add-store-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: black;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-}
-</style>
+<style></style>

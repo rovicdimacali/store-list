@@ -5,7 +5,7 @@
         this.$emit('close');
       }
     "
-    class="overlay"
+    class="overlay update-store"
   >
     <div class="form-container">
       <form @submit.prevent="updateCurrentStore">
@@ -34,8 +34,12 @@
           id="store-email"
           name="store-email"
           class="store-email"
+          @input="validateEmail"
           required
         />
+        <span v-if="!emailIsValid" style="color: red"
+          >Email input is invalid.</span
+        >
         <label for="store-contact">Store Contact Number</label>
         <input
           v-model="updatedStore.contact_number"
@@ -43,8 +47,12 @@
           id="store-contact"
           name="store-contact"
           class="store-contact"
+          @input="validateContactNumber"
           required
         />
+        <span v-if="!contactIsValid" style="color: red"
+          >Contact Number input is invalid.</span
+        >
         <label for="store-owner">Store Owner</label>
         <input
           v-model="updatedStore.owner"
@@ -52,10 +60,13 @@
           id="store-owner"
           name="store-owner"
           class="store-owner"
+          @input="validateOwner"
           required
         />
-
-        <button type="submit">Update Store</button>
+        <span v-if="!ownerIsValid" style="color: red"
+          >Owner Name input is invalid.</span
+        >
+        <button type="submit" :disabled="!isFormValid">Update Store</button>
       </form>
     </div>
   </div>
@@ -81,12 +92,43 @@ export default {
         contact_number: this.storeContactNumberToUpdate,
         owner: this.storeOwnerToUpdate,
       },
+      emailIsValid: true,
+      contactIsValid: true,
+      ownerIsValid: true,
+      isFormValid: false,
     };
   },
   methods: {
     async updateCurrentStore() {
       const update = await updateStore(this.storeIdToUpdate, this.updatedStore);
       this.$emit("store-updated");
+    },
+    validateEmail() {
+      const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      this.emailIsValid = emailRegexp.test(this.updatedStore.email);
+
+      this.updateFormValidity();
+    },
+    validateContactNumber() {
+      const contactRegExp = /^\d+(?:-\d+)*$/;
+      this.contactIsValid = contactRegExp.test(
+        this.updatedStore.contact_number
+      );
+
+      this.updateFormValidity();
+    },
+    validateOwner() {
+      const ownerRegExp = /^[A-Za-z\s]+(?:\.[A-Za-z\s]+)?(?:,[A-Za-z\s]+)*$/;
+      this.ownerIsValid = ownerRegExp.test(this.updatedStore.owner);
+
+      this.updateFormValidity();
+    },
+    updateFormValidity() {
+      if (this.emailIsValid && this.contactIsValid && this.ownerIsValid) {
+        this.isFormValid = true;
+      } else {
+        this.isFormValid = false;
+      }
     },
   },
 };
