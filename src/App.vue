@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <Notification :class-name="notification" :message="notificationMessage" />
     <AddStore
       v-if="showModal"
       @close="toggleAddStore"
@@ -21,6 +22,7 @@
       :storeEmailToUpdate="storeEmailToUpdate"
       :storeContactNumberToUpdate="storeContactNumberToUpdate"
       :storeOwnerToUpdate="storeOwnerToUpdate"
+      @store-updated="handleStoreUpdated"
     />
     <div v-for="store in stores" :key="store.id" class="store">
       <h1>{{ store.name }}</h1>
@@ -39,6 +41,7 @@
       >
         update
       </button>
+      <button @click="toggleNotification">notif</button>
     </div>
     <button @click="toggleAddStore" v-if="!showModal" class="add-store-btn">
       Add Store
@@ -51,8 +54,9 @@ import { loadAndParseStoreJSON } from "./composables/mockstore";
 import AddStore from "./components/AddStore.vue";
 import DeletePopup from "./components/DeletePopup.vue";
 import UpdateStore from "./components/UpdateStore.vue";
+import Notification from "./components/Notification.vue";
 export default {
-  components: { AddStore, DeletePopup, UpdateStore },
+  components: { AddStore, DeletePopup, UpdateStore, Notification },
   data() {
     return {
       stores: [],
@@ -69,6 +73,8 @@ export default {
       storeEmailToUpdate: "",
       storeContactNumberToUpdate: "",
       storeOwnerToUpdate: "",
+      notification: "",
+      notificationMessage: "",
     };
   },
   methods: {
@@ -96,13 +102,29 @@ export default {
       this.storeContactNumberToUpdate = storeContactNumber;
       this.storeOwnerToUpdate = storeOwner;
     },
+    toggleNotification() {
+      this.notification = "active";
+      setTimeout(() => {
+        this.notification = "";
+      }, 4000);
+    },
     handleStoreAdded(newStore) {
       this.stores.push(newStore);
       this.showModal = !this.showModal;
+      this.notificationMessage = "Store Added!";
+      this.toggleNotification();
     },
     handleStoreDeleted(removeStoreId) {
       this.stores = this.stores.filter((store) => store.id !== removeStoreId);
       this.showDeletePopup = !this.showDeletePopup;
+      this.notificationMessage = "Store Deleted!";
+      this.toggleNotification();
+    },
+    async handleStoreUpdated() {
+      this.stores = await loadAndParseStoreJSON();
+      this.showUpdatePopup = !this.showUpdatePopup;
+      this.notificationMessage = "Store Updated!";
+      this.toggleNotification();
     },
   },
   async mounted() {

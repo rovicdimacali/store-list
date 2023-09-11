@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import { updateStore } from "../composables/mockstore";
+import { updateStore, loadAndParseStoreJSON } from "../composables/mockstore";
 export default {
   props: [
     "storeIdToUpdate",
@@ -85,10 +85,8 @@ export default {
   },
   methods: {
     async updateCurrentStore() {
-      const updateStore = await updateStore(
-        this.storeIdToUpdate,
-        this.updatedStore
-      );
+      const update = await updateStore(this.storeIdToUpdate, this.updatedStore);
+      this.$emit("store-updated");
     },
   },
 };

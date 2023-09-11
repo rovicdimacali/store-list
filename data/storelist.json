@@ -2,7 +2,7 @@
   "store": [
     {
       "id": 2,
-      "name": "Company B",
+      "name": "Company XYZ",
       "address": "456 Elm Street",
       "email": "info@companyb.com",
       "contact_number": "555-987-6543",
@@ -82,7 +82,7 @@
     },
     {
       "id": 13,
-      "name": "Company M",
+      "name": "Company MASD",
       "address": "111 Willow Street",
       "email": "info@companym.com",
       "contact_number": "555-567-2345",
@@ -90,26 +90,18 @@
     },
     {
       "id": 14,
-      "name": "Company N",
+      "name": "Company NA",
       "address": "222 Oak Lane",
       "email": "info@companyn.com",
       "contact_number": "555-678-8901",
       "owner": "Karen Lewis"
     },
     {
-      "id": 15,
-      "name": "Company O",
-      "address": "333 Elm Drive",
-      "email": "info@companyo.com",
-      "contact_number": "555-789-4567",
-      "owner": "Paul Turner"
-    },
-    {
-      "id": "23591017-1529-4cb3-9c8c-7a40328e96eb",
-      "name": "Company Z",
-      "address": "6 Policy",
+      "id": "885092c4-9e53-4175-8c52-dc7aaea442d6",
+      "name": "Store 1",
+      "address": "project 8",
       "email": "kurt@xyz.com",
-      "contact_number": "123124124",
+      "contact_number": "151231232",
       "owner": "Kurt P."
     }
   ]
