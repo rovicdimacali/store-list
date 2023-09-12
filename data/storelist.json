@@ -2,19 +2,21 @@
   "store": [
     {
       "id": 2,
-      "name": "Company XYZ",
+      "name": "Company 123",
       "address": "456 Elm Street",
       "email": "info@companyb.com",
       "contact_number": "555-987-6543",
-      "owner": "Jane Smith"
+      "owner": "Jane Smith",
+      "isExpanded": false
     },
     {
       "id": 3,
-      "name": "Company C",
+      "name": "Company ABC",
       "address": "789 Oak Street",
       "email": "info@companyc.com",
       "contact_number": "555-789-0123",
-      "owner": "Mike Johnson"
+      "owner": "Mike JohnsonASD",
+      "isExpanded": false
     },
     {
       "id": 4,
@@ -22,7 +24,8 @@
       "address": "101 Pine Avenue",
       "email": "info@companyd.com",
       "contact_number": "555-345-6789",
-      "owner": "Sarah Williams"
+      "owner": "Sarah Williams",
+      "isExpanded": false
     },
     {
       "id": 5,
@@ -30,7 +33,8 @@
       "address": "222 Birch Lane",
       "email": "info@companye.com",
       "contact_number": "555-567-8901",
-      "owner": "David Lee"
+      "owner": "David Lee",
+      "isExpanded": false
     },
     {
       "id": 6,
@@ -38,7 +42,8 @@
       "address": "333 Cedar Road",
       "email": "info@companyf.com",
       "contact_number": "555-234-5678",
-      "owner": "Karen White"
+      "owner": "Karen White",
+      "isExpanded": false
     },
     {
       "id": 7,
@@ -46,7 +51,8 @@
       "address": "444 Willow Drive",
       "email": "info@companyg.com",
       "contact_number": "555-678-9012",
-      "owner": "Michael Brown"
+      "owner": "Michael Brown",
+      "isExpanded": false
     },
     {
       "id": 9,
@@ -54,7 +60,8 @@
       "address": "666 Elm Road",
       "email": "info@companyi.com",
       "contact_number": "555-890-2345",
-      "owner": "Robert Wilson"
+      "owner": "Robert Wilson",
+      "isExpanded": false
     },
     {
       "id": 10,
@@ -62,7 +69,8 @@
       "address": "777 Pine Lane",
       "email": "info@companyj.com",
       "contact_number": "555-456-7890",
-      "owner": "Susan Moore"
+      "owner": "Susan Moore",
+      "isExpanded": false
     },
     {
       "id": 11,
@@ -70,7 +78,8 @@
       "address": "888 Birch Drive",
       "email": "info@companyk.com",
       "contact_number": "555-123-5678",
-      "owner": "James Taylor"
+      "owner": "James Taylor",
+      "isExpanded": false
     },
     {
       "id": 12,
@@ -78,31 +87,17 @@
       "address": "999 Cedar Avenue",
       "email": "info@companyl.com",
       "contact_number": "555-234-9012",
-      "owner": "Jennifer Clark"
+      "owner": "Jennifer Clark",
+      "isExpanded": false
     },
     {
-      "id": 13,
-      "name": "Company MASD",
-      "address": "111 Willow Street",
-      "email": "info@companym.com",
-      "contact_number": "555-567-2345",
-      "owner": "Daniel Harris"
-    },
-    {
-      "id": 14,
-      "name": "Company N",
-      "address": "222 Oak Lane",
-      "email": "info@companyn.com",
-      "contact_number": "555-678-8901",
-      "owner": "Karen Lewis"
-    },
-    {
-      "id": "c240584a-ee10-4720-9190-91a849f62b33",
-      "name": "Shopee",
+      "id": "5d4c1dfe-49ca-4c38-ab11-833868f5bf7c",
+      "name": "Shapi",
       "address": "6 Policy",
-      "email": "asd@asd.ca",
-      "contact_number": "12213124213",
-      "owner": "John Doe"
+      "email": "joserovic.dimacali@gmail.com",
+      "contact_number": "09274815025",
+      "owner": "dwqqwrwdasd",
+      "isExpanded": false
     }
   ]
 }

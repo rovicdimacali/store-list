@@ -1,0 +1,137 @@
+.mobile-view-container {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    display: flex;
+  }
+
+  @include lg-phone {
+    display: flex;
+  }
+
+  @include m-phone {
+    display: flex;
+  }
+
+  @include sm-phone {
+    display: flex;
+  }
+
+  .store-container {
+    width: 800px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+    transition: 0.5s all;
+
+    @include lg-phone {
+      width: 500px;
+    }
+
+    @include m-phone {
+      width: 300px;
+    }
+
+    @include sm-phone {
+      width: 300px;
+    }
+
+    .store-title {
+      background-color: rgb(117, 0, 0);
+      color: white;
+      padding: 5px 10px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .store-content {
+      height: 50px;
+      overflow: hidden;
+      transition: 0.5s all;
+      border-bottom: 1px solid #cccc;
+
+      .store-item {
+        justify-content: space-between;
+        align-items: center;
+        .store-name {
+          padding: 10px 15px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          font-size: 20px;
+        }
+
+        .chevron-right {
+          margin-right: 20px;
+          transition: 0.3s all;
+        }
+
+        .chevron-right.expanded {
+          rotate: 90deg;
+        }
+      }
+
+      .row.wrap {
+        padding: 10px 15px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        justify-content: space-around;
+
+        label {
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          margin-right: 5px;
+        }
+      }
+      .actions {
+        padding: 10px 15px;
+        justify-content: space-between;
+
+        a {
+          text-decoration: none;
+
+          .update-btn {
+            border: 1px solid rgb(117, 0, 0);
+            padding: 5px 10px;
+            background: rgb(117, 0, 0);
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 5px;
+            transition: 0.3s all;
+          }
+
+          .update-btn:hover {
+            color: rgb(117, 0, 0);
+            background: none;
+          }
+        }
+
+        .delete-btn {
+          border: 1px solid rgb(117, 0, 0);
+          padding: 5px 12px;
+          background: rgb(117, 0, 0);
+          color: white;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          font-size: 15px;
+          border-radius: 5px;
+          transition: 0.3s all;
+        }
+
+        .delete-btn:hover {
+          color: rgb(117, 0, 0);
+          background: none;
+        }
+      }
+    }
+
+    .store-content.expanded {
+      height: fit-content;
+      transition: 0.5s all;
+    }
+  }
+}

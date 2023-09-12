@@ -1,20 +1,30 @@
-.overlay.update-store {
-  top: 0;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+.update-page {
   width: 100%;
-  height: 100%;
-  z-index: 11;
-
-  .form-container {
-    width: 800px;
+  display: flex;
+  justify-content: center;
+  .store-update {
+    width: 900px;
     padding: 20px;
-    position: absolute;
-    top: calc(50% - 100px);
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: white;
     border-radius: 10px;
+    margin-top: 50px;
+    transition: 0.3s all;
+
+    @include tablet {
+      width: 700px;
+    }
+
+    @include lg-phone {
+      width: 500px;
+    }
+
+    @include m-phone {
+      width: 300px;
+    }
+
+    @include sm-phone {
+      width: 300px;
+    }
 
     form {
       display: flex;
@@ -39,23 +49,62 @@
         outline: none;
       }
 
-      button[type="submit"] {
-        background-color: rgb(117, 0, 0);
-        color: white;
-        font-size: 15px;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
+      .actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin-top: 20px;
-        border-radius: 5px;
-        border: 1px solid rgb(117, 0, 0);
-        padding: 10px 15px;
-        cursor: pointer;
-        transition: 0.3s all;
-      }
 
-      button[type="submit"]:hover {
-        color: rgb(117, 0, 0);
-        background: none;
+        a {
+          text-align: center;
+          flex: 0 0 49%;
+          text-decoration: none;
+          background-color: #c7c4c4ee;
+          color: black;
+          font-size: 15px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          border-radius: 5px;
+          padding: 11px 15px;
+          cursor: pointer;
+          transition: 0.3s all;
+          margin-right: 5px;
+        }
+
+        a:hover {
+          background-color: #a3a3a3ee;
+        }
+        button[type="submit"] {
+          flex: 0 0 49%;
+          background-color: rgb(117, 0, 0);
+          color: white;
+          font-size: 15px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          border-radius: 5px;
+          border: 1px solid rgb(117, 0, 0);
+          padding: 10px 15px;
+          cursor: pointer;
+          transition: 0.3s all;
+        }
+
+        button[type="submit"]:hover {
+          color: rgb(117, 0, 0);
+          background: none;
+        }
+
+        button:disabled {
+          background-color: gray;
+          border: none;
+          color: white;
+          cursor: not-allowed;
+        }
+
+        button:disabled:hover {
+          background-color: gray;
+          color: white;
+          cursor: not-allowed;
+        }
       }
     }
   }

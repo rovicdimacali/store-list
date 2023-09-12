@@ -6,6 +6,23 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: 0.5s all;
+
+  @include tablet {
+    height: 60px;
+  }
+
+  @include lg-phone {
+    height: 60px;
+  }
+
+  @include m-phone {
+    height: 60px;
+  }
+
+  @include sm-phone {
+    height: 60px;
+  }
 
   h1 {
     color: white;

@@ -70,6 +70,27 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
+  transition: 0.5s all;
+}
+@media (max-width: 990px) and (min-width: 768px) {
+  nav {
+    height: 60px;
+  }
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  nav {
+    height: 60px;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  nav {
+    height: 60px;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  nav {
+    height: 60px;
+  }
 }
 nav h1 {
   color: white;
@@ -86,14 +107,40 @@ nav h1 {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 990px) and (min-width: 768px) {
+  .table-container {
+    display: none;
+  }
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .table-container {
+    display: none;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .table-container {
+    display: none;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .table-container {
+    display: none;
+  }
+}
 .table-container table {
   width: 1200px;
-  margin-top: 50px;
+  margin-top: 70px;
   border: 1px solid rgb(117, 0, 0);
   padding: 20px;
   border-collapse: collapse;
   margin-bottom: 50px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: 0.5s all;
+}
+@media (max-width: 1430px) and (min-width: 990px) {
+  .table-container table {
+    width: 900px;
+  }
 }
 .table-container table .table-header {
   background: rgb(117, 0, 0);
@@ -110,6 +157,11 @@ nav h1 {
   font-family: "Popins", sans-serif;
   font-size: 15px;
   font-weight: 700;
+}
+.table-container table tbody th a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: rgb(117, 0, 0);
 }
 .table-container table tbody .shaded {
   background: rgba(117, 0, 0, 0.062);
@@ -131,6 +183,138 @@ nav h1 {
   color: rgb(117, 0, 0);
 }
 
+.mobile-view-container {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 990px) and (min-width: 768px) {
+  .mobile-view-container {
+    display: flex;
+  }
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .mobile-view-container {
+    display: flex;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .mobile-view-container {
+    display: flex;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .mobile-view-container {
+    display: flex;
+  }
+}
+.mobile-view-container .store-container {
+  width: 800px;
+  margin-top: 65px;
+  margin-bottom: 65px;
+  transition: 0.5s all;
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .mobile-view-container .store-container {
+    width: 500px;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .mobile-view-container .store-container {
+    width: 300px;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .mobile-view-container .store-container {
+    width: 300px;
+  }
+}
+.mobile-view-container .store-container .store-title {
+  background-color: rgb(117, 0, 0);
+  color: white;
+  padding: 5px 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.mobile-view-container .store-container .store-content {
+  height: 50px;
+  overflow: hidden;
+  transition: 0.5s all;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.8);
+}
+.mobile-view-container .store-container .store-content .store-item {
+  justify-content: space-between;
+  align-items: center;
+}
+.mobile-view-container .store-container .store-content .store-item .store-name {
+  padding: 10px 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+.mobile-view-container .store-container .store-content .store-item .chevron-right {
+  margin-right: 20px;
+  transition: 0.3s all;
+}
+.mobile-view-container .store-container .store-content .store-item .chevron-right.expanded {
+  rotate: 90deg;
+}
+.mobile-view-container .store-container .store-content .row.wrap {
+  padding: 10px 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  justify-content: space-around;
+}
+.mobile-view-container .store-container .store-content .row.wrap label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.mobile-view-container .store-container .store-content .actions {
+  padding: 10px 15px;
+  justify-content: space-between;
+}
+.mobile-view-container .store-container .store-content .actions a {
+  text-decoration: none;
+}
+.mobile-view-container .store-container .store-content .actions a .update-btn {
+  border: 1px solid rgb(117, 0, 0);
+  padding: 5px 10px;
+  background: rgb(117, 0, 0);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: 0.3s all;
+}
+.mobile-view-container .store-container .store-content .actions a .update-btn:hover {
+  color: rgb(117, 0, 0);
+  background: none;
+}
+.mobile-view-container .store-container .store-content .actions .delete-btn {
+  border: 1px solid rgb(117, 0, 0);
+  padding: 5px 12px;
+  background: rgb(117, 0, 0);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 5px;
+  transition: 0.3s all;
+}
+.mobile-view-container .store-container .store-content .actions .delete-btn:hover {
+  color: rgb(117, 0, 0);
+  background: none;
+}
+.mobile-view-container .store-container .store-content.expanded {
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: 0.5s all;
+}
+
 .notification {
   position: fixed;
   top: -70px;
@@ -147,6 +331,26 @@ nav h1 {
 .active {
   top: 110px;
   transition: all 0.3s;
+}
+@media (max-width: 990px) and (min-width: 768px) {
+  .active {
+    top: 70px;
+  }
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .active {
+    top: 70px;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .active {
+    top: 70px;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .active {
+    top: 70px;
+  }
 }
 
 .notification .notification-text {
@@ -173,6 +377,31 @@ nav h1 {
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 10px;
+  transition: 0.3s all;
+}
+@media (max-width: 990px) and (min-width: 768px) {
+  .overlay.add-store .form-container {
+    width: 700px;
+  }
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .overlay.add-store .form-container {
+    width: 500px;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .overlay.add-store .form-container {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .overlay.add-store .form-container {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .overlay.add-store .form-container form {
   display: flex;
@@ -194,89 +423,162 @@ nav h1 {
   font-family: "Poppins", sans-serif;
   outline: none;
 }
-.overlay.add-store .form-container form button[type=submit] {
+.overlay.add-store .form-container form .actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.overlay.add-store .form-container form .actions .cancel-btn {
+  flex: 0 0 49%;
+  background-color: rgba(199, 196, 196, 0.9333333333);
+  border: 1px solid rgba(199, 196, 196, 0.9333333333);
+  color: black;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+.overlay.add-store .form-container form .actions .cancel-btn:hover {
+  background-color: rgba(163, 163, 163, 0.9333333333);
+  border: 1px solid rgba(163, 163, 163, 0.9333333333);
+}
+.overlay.add-store .form-container form .actions button[type=submit] {
+  flex: 0 0 49%;
   background-color: rgb(117, 0, 0);
   color: white;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  margin-top: 20px;
   border-radius: 5px;
   border: 1px solid rgb(117, 0, 0);
   padding: 10px 15px;
   cursor: pointer;
   transition: 0.3s all;
 }
-.overlay.add-store .form-container form button[type=submit]:hover {
+.overlay.add-store .form-container form .actions button[type=submit]:hover {
   color: rgb(117, 0, 0);
   background: none;
 }
-.overlay.add-store .form-container form button:disabled {
+.overlay.add-store .form-container form .actions button:disabled {
   background-color: gray;
   border: none;
   color: white;
   cursor: not-allowed;
 }
-.overlay.add-store .form-container form button:disabled:hover {
+.overlay.add-store .form-container form .actions button:disabled:hover {
   background-color: gray;
   color: white;
   cursor: not-allowed;
 }
 
-.overlay.update-store {
-  top: 0;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+.update-page {
   width: 100%;
-  height: 100%;
-  z-index: 11;
+  display: flex;
+  justify-content: center;
 }
-.overlay.update-store .form-container {
-  width: 800px;
+.update-page .store-update {
+  width: 900px;
   padding: 20px;
-  position: absolute;
-  top: calc(50% - 100px);
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: white;
   border-radius: 10px;
+  margin-top: 50px;
+  transition: 0.3s all;
 }
-.overlay.update-store .form-container form {
+@media (max-width: 990px) and (min-width: 768px) {
+  .update-page .store-update {
+    width: 700px;
+  }
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .update-page .store-update {
+    width: 500px;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .update-page .store-update {
+    width: 300px;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .update-page .store-update {
+    width: 300px;
+  }
+}
+.update-page .store-update form {
   display: flex;
   flex-direction: column;
   padding: 10px;
 }
-.overlay.update-store .form-container form label {
+.update-page .store-update form label {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   margin-top: 10px;
   margin-bottom: 3px;
 }
-.overlay.update-store .form-container form label:first-child {
+.update-page .store-update form label:first-child {
   margin-top: 0;
 }
-.overlay.update-store .form-container form input {
+.update-page .store-update form input {
   padding: 5px 10px;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   outline: none;
 }
-.overlay.update-store .form-container form button[type=submit] {
+.update-page .store-update form .actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.update-page .store-update form .actions a {
+  text-align: center;
+  flex: 0 0 49%;
+  text-decoration: none;
+  background-color: rgba(199, 196, 196, 0.9333333333);
+  color: black;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 11px 15px;
+  cursor: pointer;
+  transition: 0.3s all;
+  margin-right: 5px;
+}
+.update-page .store-update form .actions a:hover {
+  background-color: rgba(163, 163, 163, 0.9333333333);
+}
+.update-page .store-update form .actions button[type=submit] {
+  flex: 0 0 49%;
   background-color: rgb(117, 0, 0);
   color: white;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  margin-top: 20px;
   border-radius: 5px;
   border: 1px solid rgb(117, 0, 0);
   padding: 10px 15px;
   cursor: pointer;
   transition: 0.3s all;
 }
-.overlay.update-store .form-container form button[type=submit]:hover {
+.update-page .store-update form .actions button[type=submit]:hover {
   color: rgb(117, 0, 0);
   background: none;
+}
+.update-page .store-update form .actions button:disabled {
+  background-color: gray;
+  border: none;
+  color: white;
+  cursor: not-allowed;
+}
+.update-page .store-update form .actions button:disabled:hover {
+  background-color: gray;
+  color: white;
+  cursor: not-allowed;
 }
 
 .overlay.delete-store {
@@ -297,6 +599,26 @@ nav h1 {
   background: white;
   border-radius: 10px;
   text-align: center;
+  transition: 0.3s all;
+}
+@media (max-width: 768px) and (min-width: 550px) {
+  .overlay.delete-store .modal {
+    width: 500px;
+  }
+}
+@media (max-width: 550px) and (min-width: 360px) {
+  .overlay.delete-store .modal {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 360px) and (min-width: 0) {
+  .overlay.delete-store .modal {
+    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .overlay.delete-store .modal h2 {
   font-family: "Poppins", sans-serif;
@@ -359,7 +681,30 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
 .add-store-btn:hover {
   background: none;
   color: rgb(117, 0, 0);
+}
+
+.search-input {
+  position: absolute;
+  margin-top: 15px;
+  padding: 5px 10px;
+  right: 30px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
 }/*# sourceMappingURL=main.css.map */

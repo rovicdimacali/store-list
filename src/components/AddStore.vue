@@ -66,7 +66,19 @@
         <span v-if="!ownerIsValid" style="color: red"
           >Owner Name input is invalid.</span
         >
-        <button type="submit" :disabled="!isFormValid">Add Store</button>
+        <div class="actions">
+          <button
+            class="cancel-btn"
+            @click="
+              () => {
+                this.$emit('close');
+              }
+            "
+          >
+            Cancel
+          </button>
+          <button type="submit" :disabled="!isFormValid">Add Store</button>
+        </div>
       </form>
     </div>
   </div>
@@ -85,20 +97,13 @@ export default {
         email: "",
         contact_number: "",
         owner: "",
+        isExpanded: false,
       },
       emailIsValid: true,
       contactIsValid: true,
       ownerIsValid: true,
-      isFormValid: false,
+      isFormValid: "false",
     };
-  },
-  mounted() {
-    this.restoreFormState();
-    console.log("modal mounted");
-  },
-  unmounted() {
-    this.saveFormState();
-    console.log("modal unmounted");
   },
   methods: {
     async addNewStore() {
@@ -122,17 +127,16 @@ export default {
       this.newStore.email = "";
       this.newStore.contact_number = "";
       this.newStore.owner = "";
+      this.newStore.isExpanded = false;
     },
     validateEmail() {
       const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       this.emailIsValid = emailRegexp.test(this.newStore.email);
-
       this.updateFormValidity();
     },
     validateContactNumber() {
       const contactRegExp = /^\d+(?:-\d+)*$/;
       this.contactIsValid = contactRegExp.test(this.newStore.contact_number);
-
       this.updateFormValidity();
     },
     validateOwner() {
@@ -142,12 +146,28 @@ export default {
       this.updateFormValidity();
     },
     updateFormValidity() {
-      if (this.emailIsValid && this.contactIsValid && this.ownerIsValid) {
+      if (
+        this.emailIsValid &&
+        this.contactIsValid &&
+        this.ownerIsValid &&
+        this.newStore.name &&
+        this.newStore.address &&
+        this.newStore.email &&
+        this.newStore.contact_number &&
+        this.newStore.owner
+      ) {
         this.isFormValid = true;
       } else {
         this.isFormValid = false;
       }
     },
+  },
+  mounted() {
+    this.restoreFormState();
+    this.updateFormValidity();
+  },
+  unmounted() {
+    this.saveFormState();
   },
 };
 </script>

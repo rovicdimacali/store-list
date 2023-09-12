@@ -16,6 +16,23 @@
     background: white;
     border-radius: 10px;
     text-align: center;
+    transition: 0.3s all;
+
+    @include lg-phone {
+      width: 500px;
+    }
+
+    @include m-phone {
+      width: 300px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @include sm-phone {
+      width: 300px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
 
     h2 {
       font-family: "Poppins", sans-serif;

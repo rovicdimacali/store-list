@@ -1,13 +1,12 @@
 <template>
-  <div
-    @click.self="
-      () => {
-        this.$emit('close');
-      }
-    "
-    class="overlay update-store"
-  >
-    <div class="form-container">
+  <Notification
+    :class-name="notification"
+    :showRedirect="showRedirect"
+    :message="notificationMessage"
+    :remainingTime="timer"
+  />
+  <div class="update-page">
+    <div class="store-update">
       <form @submit.prevent="updateCurrentStore">
         <label for="store-name">Store Name</label>
         <input
@@ -66,15 +65,21 @@
         <span v-if="!ownerIsValid" style="color: red"
           >Owner Name input is invalid.</span
         >
-        <button type="submit" :disabled="!isFormValid">Update Store</button>
+        <div class="actions">
+          <RouterLink :to="{ name: 'Home' }">Cancel</RouterLink>
+          <button type="submit" :disabled="!isFormValid">Update Store</button>
+        </div>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import { updateStore, loadAndParseStoreJSON } from "../composables/mockstore";
+import { RouterLink } from "vue-router";
+import { updateStore } from "../composables/mockstore";
+import Notification from "../components/Notification.vue";
 export default {
+  components: { Notification },
   props: [
     "storeIdToUpdate",
     "storeNameToUpdate",
@@ -95,18 +100,29 @@ export default {
       emailIsValid: true,
       contactIsValid: true,
       ownerIsValid: true,
+      notificationMessage: "",
+      timer: 5,
       isFormValid: false,
+      showRedirect: false,
     };
   },
   methods: {
+    toggleNotification() {
+      this.notification = "active";
+      this.showRedirect = true;
+      setTimeout(() => {
+        this.notification = "";
+        this.$router.push("/");
+      }, 4000);
+    },
     async updateCurrentStore() {
       const update = await updateStore(this.storeIdToUpdate, this.updatedStore);
-      this.$emit("store-updated");
+      this.notificationMessage = "Store Updated";
+      this.toggleNotification();
     },
     validateEmail() {
       const emailRegexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       this.emailIsValid = emailRegexp.test(this.updatedStore.email);
-
       this.updateFormValidity();
     },
     validateContactNumber() {
@@ -114,7 +130,6 @@ export default {
       this.contactIsValid = contactRegExp.test(
         this.updatedStore.contact_number
       );
-
       this.updateFormValidity();
     },
     validateOwner() {
@@ -130,6 +145,9 @@ export default {
         this.isFormValid = false;
       }
     },
+  },
+  mounted() {
+    this.updateFormValidity();
   },
 };
 </script>

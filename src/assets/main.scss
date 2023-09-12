@@ -3,6 +3,7 @@
 @import "./base";
 @import "./nav";
 @import "./table";
+@import "./mobile";
 @import "./notification";
 @import "./addStore";
 @import "./updateStore";
@@ -34,7 +35,30 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
 .add-store-btn:hover {
   background: none;
   color: rgb(117, 0, 0);
+}
+
+.search-input {
+  position: absolute;
+  margin-top: 15px;
+  padding: 5px 10px;
+  right: 30px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
 }

@@ -4,14 +4,35 @@
   justify-content: center;
   align-items: center;
 
+  @include tablet {
+    display: none;
+  }
+
+  @include lg-phone {
+    display: none;
+  }
+
+  @include m-phone {
+    display: none;
+  }
+
+  @include sm-phone {
+    display: none;
+  }
+
   table {
     width: 1200px;
-    margin-top: 50px;
+    margin-top: 70px;
     border: 1px solid rgb(117, 0, 0);
     padding: 20px;
     border-collapse: collapse;
     margin-bottom: 50px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.5s all;
+
+    @include desktop {
+      width: 900px;
+    }
 
     .table-header {
       background: rgb(117, 0, 0);
@@ -31,6 +52,12 @@
         font-family: "Popins", sans-serif;
         font-size: 15px;
         font-weight: 700;
+
+        a {
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          color: rgb(117, 0, 0);
+        }
       }
 
       .shaded {
