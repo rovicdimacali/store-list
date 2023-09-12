@@ -21,3 +21,5 @@ npm install
 ```sh
 npm run start
 ```
+
+Once the localhost url appears, copy the localhost and enter it in your browser.
